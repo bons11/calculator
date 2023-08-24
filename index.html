@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Freehand&family=Just+Another+Hand&display=swap');
+
+    @keyframes coverup{
+        0% {margin-top: 130px}
+        100% {margin-top: 80px}
+    } 
+    
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #2e1411;
+        }
+
+        .calculator {
+            position: relative;
+            z-index: 1;
+            width: 288px;
+            border-radius: 10px 10px 50px 50px;
+            padding: 20px;
+            text-align: center;
+            background-color: #1d1f2b;  
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat;
+        }
+
+        .calculator hr {
+            border: none;
+        }
+
+        .brand {
+            color: #ccc;
+            float: left;
+        }
+
+        .brand i{
+            color: #03a6a0;
+        }
+
+        .cover {
+            position: absolute;
+            z-index: 0;
+            margin-top: 80px;
+            background-color: #5c5c5c;
+            height: 450px;
+            width: 328px;
+            border-right: 3px solid #363636;
+            border-left: 3px solid #363636;
+            border-radius: 10px 10px 60px 60px;
+            box-shadow: 0px 0px 10px black;
+            animation: coverup;
+            animation-duration: 1s;
+            transition: .5s;
+        }
+
+        .cover:hover {
+            margin-top: 135px;
+        }
+
+        .grabbything {
+            margin-top: 400px;
+            
+        }
+
+        .grabbything hr {
+            width: 80px;
+            background-color: #363636;
+            border: none;
+            height: 2px;
+        }
+        
+        .paper {
+            position: absolute;
+            top: 20px;
+            left: 100px;
+            z-index: -1;
+            height: 690px;
+            width: 600px;
+            background-color: yellow;
+            padding: 10px;
+        }
+
+        .paper hr {
+            border: none;
+            background-color: #9e3226;
+            height: 2px;
+        }
+
+        .paperheader {
+            height: 35px;
+            margin-bottom: 33px;
+        }
+
+        .name {
+            float: left;
+            margin-left: 10px;
+            margin-top: 21px;
+            font-family: freehand;
+        }
+
+        .date {
+            float: right;
+            margin-right: 20px;
+        }
+
+        .date b {
+            color: #224785;
+        }
+
+        .date u {
+            font-family: freehand;
+        }
+
+        .paperlines {
+            margin-top: 20px;
+        }
+
+        .paperlines hr{
+            margin-top: 20px;
+            border: none;
+            background-color: #224785;
+            width: 93%;
+        }
+
+        .paperbrand {
+            font-size: 10px;
+        }
+
+        input {
+            width: 90%;
+            margin-bottom: 20px;
+            padding: 10px;
+            font-size: 25px;
+            font-family: vt323;
+            background-color: #808080;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 10fr);
+            gap: 10px;
+            margin-bottom: 20px
+        }
+
+        .orange {
+            background-color: #ad6302;
+        }
+
+        .lightgrey {
+            background-color: #787878;
+        }
+
+        .clear {
+            background-color: #4d4d4d;
+            color: #ad6302;
+        }
+
+        button {
+            padding: 15px;
+            font-size: 20px;
+            border: none;
+            border-radius: 10px;
+            background-color: #4d4d4d;
+            color: #ccc;
+            cursor: pointer;
+        }
+    </style>
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="paper">
+        <div class="paperheader">
+            <p class="name">Matt T. Nikmangopya</p>
+            <p class="date"><b>Date:</b> <u>August sumting, 2023</u></p>
+        </div>
+        <hr>
+        <div class="paperlines">
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <p class="paperbrand">SHEESH OF PAPER</p>
+        </div>
+    </div>
+    <div class="calculator">
+        <div class="brand">
+            <b>SHEESHULATOR </b><i><u>mini</u></i>
+        </div>
+        <input type="text" id="result" readonly>
+        <div class="buttons">
+            <hr><hr>
+            <button class="lightgrey" onclick="appendToResult('%')">%</button>
+            <button class="lightgrey" onclick="appendToResult('^')">^</button>
+            <button onclick="appendToResult('1')">1</button>
+            <button onclick="appendToResult('2')">2</button>
+            <button onclick="appendToResult('3')">3</button>
+            <button class="lightgrey" onclick="appendToResult('+')">+</button>
+            <button onclick="appendToResult('4')">4</button>
+            <button onclick="appendToResult('5')">5</button>
+            <button onclick="appendToResult('6')">6</button>
+            <button class="lightgrey"onclick="appendToResult('-')">-</button>
+            <button onclick="appendToResult('7')">7</button>
+            <button onclick="appendToResult('8')">8</button>
+            <button onclick="appendToResult('9')">9</button>
+            <button class="lightgrey" onclick="appendToResult('*')">x</button>
+            <button class="clear" onclick="clearResult()">C</button>
+            <button onclick="appendToResult('0')">0</button>
+            <button class="orange" onclick="calculate()">=</button>
+            <button class="lightgrey" onclick="appendToResult('/')">/</button>
+        </div>
+    </div>
+    <div class="cover">
+        <div class="grabbything">
+            <hr>
+            <hr>
+            <hr>
+        </div>
+    </div>
+    <script>
+        let result = document.getElementById('result');
+    
+        function appendToResult(value) {
+            result.value += value;
+        }
+    
+        function clearResult() {
+            result.value = '';
+        }
+    
+        function calculate() {
+            let input = result.value;
+    
+            let matches = input.match(/(\d+\.\d+|\d+|[+\-*/%^])/g);
+    
+            if (matches) {
+                let total = parseFloat(matches[0]);
+                for (let i = 1; i < matches.length; i += 2) {
+                    let operator = matches[i];
+                    let number = parseFloat(matches[i + 1]);
+                    switch (operator) {
+                        case '+':
+                            total += number;
+                            break;
+                        case '-':
+                            total -= number;
+                            break;
+                        case '*':
+                            total *= number;
+                            break;
+                        case '/':
+                            total /= number;
+                            break;
+                        case '%':
+                            total %= number;
+                            break;
+                        case '^':
+                            total = Math.pow(total, number);
+                            break;
+                    }
+                }
+                result.value = total;
+            } else {
+                result.value = 'Error';
+            }
+        }
+    </script>
+</body>
+</html>
